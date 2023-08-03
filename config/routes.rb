@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :travel_experiences
+  resources :destinations
   
   resource :users, only: [:create]
   post "/login", to: "users#login"
