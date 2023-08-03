@@ -10,9 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_03_193531) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_03_194834) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bookings", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "email"
+    t.integer "phone"
+    t.integer "no_of_people"
+    t.date "check_in_date"
+    t.date "check_out_date"
+    t.bigint "user_id", null: false
+    t.bigint "travel_package_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["travel_package_id"], name: "index_bookings_on_travel_package_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
 
   create_table "destinations", force: :cascade do |t|
     t.string "location"
@@ -59,6 +75,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_03_193531) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+  add_foreign_key "bookings", "travel_packages"
+  add_foreign_key "bookings", "users"
   add_foreign_key "destinations", "users"
   add_foreign_key "travel_experiences", "users"
   add_foreign_key "travel_packages", "destinations"
