@@ -40,7 +40,7 @@ class BookingsController < ApplicationController
   # DELETE /bookings/1
   def destroy
     if @booking.destroy
-      render json: { data: 'Booking deleted successfully', status: 'sucess' }, status: :ok
+      render json: { data: 'Booking deleted successfully', status: 'success' }, status: :ok
     else
       render json: { data: 'Something went wrong', status: 'failed' }
     end

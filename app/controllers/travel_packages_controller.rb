@@ -39,7 +39,7 @@ class TravelPackagesController < ApplicationController
   # DELETE /travel_packages/1
   def destroy
     if @travel_package.destroy
-      render json: { data: 'Travel package deleted successfully', status: 'sucess' }, status: :ok
+      render json: { data: 'Travel package deleted successfully', status: 'success' }, status: :ok
     else
       render json: { data: 'Something went wrong', status: 'failed' }
     end
