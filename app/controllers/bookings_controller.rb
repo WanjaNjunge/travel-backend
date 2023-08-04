@@ -1,12 +1,11 @@
 class BookingsController < ApplicationController
   before_action :authorized
-  before_action :set_booking, only: %i[ show update destroy ]
+  before_action :set_booking, only: %i[show update destroy]
+  before_action :authorized_user, only: %i[update destroy]
 
   # GET /bookings
   def index
-    @bookings = Booking.where user: @user.id
-   
-
+    @bookings = Booking.all
     render json: @bookings, status: :ok
   end
 
@@ -19,7 +18,6 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     @booking.user = @user
-    
 
     if @booking.save
       render json: @booking, status: :ok
@@ -50,7 +48,6 @@ class BookingsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_booking
       @booking = Booking.find(params[:id])
-      
 
     rescue ActiveRecord::RecordNotFound => error
       render json: error.message, status: :unauthorized
@@ -59,5 +56,22 @@ class BookingsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def booking_params
       params.require(:booking).permit(:first_name, :last_name, :email, :phone, :no_of_people, :check_in_date, :check_out_date, :user_id, :travel_package_id)
+    end
+
+    def authorized_user
+      case @user.role
+      when 'admin'
+        # Admins can perform any action
+      when 'tour_operator', 'traveller'
+        if @booking.user != @user
+          render_unauthorized
+        end
+      else
+        render_unauthorized
+      end
+    end
+
+    def render_unauthorized
+      render json: { message: 'You are not authorized to perform this action.' }, status: :unauthorized
     end
 end
