@@ -1,6 +1,8 @@
 class TravelPackagesController < ApplicationController
-  before_action :authorized, except: [:index, :show]
   before_action :set_travel_package, only: %i[ show update destroy ]
+  before_action :authorized, except: [:index, :show]
+  before_action :authorized_user, except: [:index, :show]
+  
 
   # GET /travel_packages
   def index
@@ -57,5 +59,24 @@ class TravelPackagesController < ApplicationController
     # Only allow a list of trusted parameters through.
     def travel_package_params
       params.require(:travel_package).permit(:name, :description, :image_url, :pricing, :itinerary, :booking_status, :user_id, :destination_id)
+    end
+
+    def authorized_user
+      case @user.role
+      when 'admin'
+        # Admins can perform any action
+      when 'tour_operator'
+        # Tour operators can perform any action
+        unless ['create', 'update', 'destroy'].include?(action_name)
+          render json: { message: 'You are not authorized to perform this action.' }, status: :unauthorized
+        end
+      when 'traveller'
+        # Travellers can view destinations
+        unless ['index', 'show'].include?(action_name)
+          render json: { message: 'You are not authorized to perform this action.' }, status: :unauthorized
+        end
+      else
+        render json: { message: 'You are not authorized to perform this action.' }, status: :unauthorized
+      end
     end
 end
