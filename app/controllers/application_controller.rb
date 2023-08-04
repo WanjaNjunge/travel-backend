@@ -38,4 +38,16 @@ class ApplicationController < ActionController::API
     def authorized
         render json: { message: 'Please log in' }, status: :unauthorized unless logged_in?
     end
+
+    def authorized_admin?
+        logged_in? && logged_in_user.admin?
+    end
+    
+    def authorized_tour_operator?
+        logged_in? && logged_in_user.tour_operator?
+    end
+    
+    def authorized_traveller?
+        logged_in? && logged_in_user.traveller?
+    end
 end

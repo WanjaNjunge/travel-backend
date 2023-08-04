@@ -1,6 +1,8 @@
 class DestinationsController < ApplicationController
   before_action :set_destination, only: %i[ show update destroy ]
   before_action :authorized, except: [:index, :show]
+  before_action :authorized_user, except: [:index, :show]
+  
 
   # GET /destinations
   def index
@@ -58,4 +60,25 @@ class DestinationsController < ApplicationController
     def destination_params
       params.require(:destination).permit(:location, :country, :image_url, :user_id)
     end
+
+    def authorized_user
+      case @user.role
+      when 'admin'
+        # Admins can perform any action
+      when 'tour_operator'
+        # Tour operators can view destinations, but not perform other actions
+        unless ['index', 'show'].include?(action_name)
+          render json: { message: 'You are not authorized to perform this action.' }, status: :unauthorized
+        end
+      when 'traveller'
+        # Travellers can view destinations
+        unless ['index', 'show'].include?(action_name)
+          render json: { message: 'You are not authorized to perform this action.' }, status: :unauthorized
+        end
+      else
+        render json: { message: 'You are not authorized to perform this action.' }, status: :unauthorized
+      end
+    end
+
+    
 end
