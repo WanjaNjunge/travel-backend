@@ -1,12 +1,11 @@
 class TravelExperiencesController < ApplicationController
   before_action :authorized
-  before_action :set_travel_experience, only: %i[ show update destroy ]
+  before_action :set_travel_experience, only: %i[show update destroy]
+  before_action :authorized_user, only: %i[update destroy]
 
   # GET /travel_experiences
   def index
-    @travel_experiences = TravelExperience.where user: @user.id
-    
-
+    @travel_experiences = TravelExperience.all
     render json: @travel_experiences, status: :ok
   end
 
@@ -19,8 +18,6 @@ class TravelExperiencesController < ApplicationController
   def create
     @travel_experience = TravelExperience.new(travel_experience_params)
     @travel_experience.user = @user
-    
-
 
     if @travel_experience.save
       render json: @travel_experience, status: :ok
@@ -51,7 +48,6 @@ class TravelExperiencesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_travel_experience
       @travel_experience = TravelExperience.find(params[:id])
-      
 
       rescue ActiveRecord::RecordNotFound => error
         render json: error.message, status: :unauthorized
@@ -60,5 +56,22 @@ class TravelExperiencesController < ApplicationController
     # Only allow a list of trusted parameters through.
     def travel_experience_params
       params.require(:travel_experience).permit(:title, :description, :image_url, :user_id)
+    end
+
+    def authorized_user
+      case @user.role
+      when 'admin'
+        # Admins can perform any action
+      when 'tour_operator', 'traveller'
+        if @travel_experience.user != @user
+          render_unauthorized
+        end
+      else
+        render_unauthorized
+      end
+    end
+
+    def render_unauthorized
+      render json: { message: 'You are not authorized to perform this action.' }, status: :unauthorized
     end
 end
