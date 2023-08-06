@@ -9,7 +9,8 @@ class User < ApplicationRecord
 
     validates :username, presence: true
     validates :email, presence: true, uniqueness: true
-    validates :password, presence: true
+    validates :password, presence: true, confirmation: true, if: :password_digest_changed?
+    
 
     enum role: { traveller: 0, tour_operator: 1, admin: 2 }
 
