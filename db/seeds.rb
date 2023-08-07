@@ -1,12 +1,12 @@
 # Create Users
-User.create!(
+user1 = User.create!(
     username: 'johny_doe',
     email: 'hiiii@example.com',
     password: 'passwordy',
     
   )
   
-    User.create!(
+user2 = User.create!(
     username: 'janey_smith',
     email: 'usery@example.com',
     password: 'password'
@@ -210,6 +210,67 @@ nakuru = Destination.create!(destination_list[24].merge(user_id: admin.id))
   puts "Packages seeding!"
 
   TravelPackage.create!(travel_package_list)
+
+
+puts "Travel Experiences seeding!"
+
+  # Create travel experiences
+experience1 = TravelExperience.create(
+  title: "Eiffel Tower Sunrise",
+  description: "Witness the enchanting beauty of the Eiffel Tower at sunrise. As the sun's golden rays pierce through the morning mist, you'll find yourself on top of the world, gazing out over the city of love. The Eiffel Tower's iconic silhouette against the pastel sky is a sight you'll cherish forever. Capture breathtaking photos and create lasting memories as you enjoy the tranquil ambiance before the bustling city awakens. Whether you're a photography enthusiast or simply seeking a serene start to your day, the Eiffel Tower sunrise experience is a must-do in Paris.",
+  image_url: "https://www.nomadicmatt.com/wp-content/uploads/2018/08/5daysinparis1.jpg",
+  user_id: user1.id
+)
+
+experience2 = TravelExperience.create(
+  title: "Bali Spa Retreat",
+  description: "Immerse yourself in unparalleled relaxation with our Bali Spa Retreat. Set against the backdrop of Bali's lush landscapes, this retreat offers you a chance to rejuvenate both body and soul. Indulge in traditional Balinese spa treatments that incorporate age-old techniques, natural ingredients, and skilled therapists. From invigorating massages to rejuvenating facials, our spa retreat promises a holistic wellness experience. Let the soothing sounds of nature and the scent of aromatic oils transport you to a state of pure bliss. Escape the stresses of everyday life and embark on a journey of self-care and pampering.",
+  image_url: "https://media.nomadicmatt.com/2022/tribalbali1.jpeg",
+  user_id: user2.id
+)
+
+experience3 = TravelExperience.create(
+  title: "Safari Adventure in Kenya",
+  description: "Embark on a thrilling safari journey in the heart of Kenya's wilderness. Witness the majestic African wildlife in their natural habitat as you traverse through vast savannas and lush forests. From the iconic Big Five to a myriad of bird species, you'll be captivated by the diversity of wildlife that calls Kenya home. Our experienced guides will lead you on game drives and nature walks, sharing their insights and stories about the ecosystem. As the sun sets over the horizon, gather around a campfire and listen to the sounds of the wild under the starlit sky. It's a safari experience that will leave you with unforgettable memories.",
+  image_url: "https://media.nomadicmatt.com/safaripic2.jpg",
+  user_id: user1.id
+)
+
+experience4 = TravelExperience.create(
+  title: "Pyramids of Egypt Exploration",
+  description: "Uncover the mysteries of ancient Egypt as you explore the iconic pyramids. Step back in time to an era of pharaohs and dynasties, as you walk among the towering structures that have withstood the test of time. Marvel at the intricate architecture and the stories etched into the stone walls. From the Great Pyramid of Giza to the Sphinx, each site holds a piece of Egypt's rich history. Guided by Egyptologists, you'll learn about the significance of each monument and the secrets they hold. An adventure through the land of the pharaohs awaits, offering a glimpse into the past and a connection to a captivating civilization.",
+  image_url: "https://media.nomadicmatt.com/2019/egypttours1.jpg",
+  user_id: user2.id
+)
+
+experience5 = TravelExperience.create(
+  title: "Cape Town Winery Tour",
+  description: "Indulge in the finest wines of Cape Town's renowned wineries. Embark on a journey through the picturesque vineyards of the Western Cape, where the Mediterranean climate and fertile soils produce exceptional wines. Sample a variety of reds, whites, and rosés while taking in the stunning landscapes. From historic estates to modern cellars, each winery offers a unique tasting experience. Learn about the winemaking process from knowledgeable vintners and savor gourmet pairings with your wine selections. Whether you're a wine connoisseur or simply appreciate the finer things in life, the Cape Town Winery Tour promises a sensory delight.",
+  image_url: "https://media.nomadicmatt.com/2020/capetownguide13.jpg",
+  user_id: user1.id
+)
+
+experience6 = TravelExperience.create(
+  title: "Majestic Victoria Falls Retreat",
+  description: "Witness the breathtaking beauty of Victoria Falls and experience its serene surroundings. As you stand in awe of the cascading waters, feel the mist on your skin and listen to the thunderous roar of the falls. Explore the lush rainforest that envelops the falls, encountering vibrant flora and fauna along the way. Take a scenic helicopter ride for a bird's-eye view of this natural wonder, capturing unforgettable photographs. Whether you're seeking adventure or tranquility, the Majestic Victoria Falls Retreat is a journey into the heart of one of Africa's most iconic landscapes.",
+  image_url: "https://upload.wikimedia.org/wikipedia/commons/d/da/Cataratas_Victoria%2C_Zambia-Zimbabue%2C_2018-07-27%2C_DD_04.jpg",
+  user_id: user2.id
+)
+
+experience7 = TravelExperience.create(
+  title: "Moroccan Souk and Desert Adventure",
+  description: "Immerse yourself in the vibrant markets of Morocco and explore the vast Sahara Desert. Wander through the bustling souks, where colorful textiles, intricate ceramics, and aromatic spices fill the air with a sensory symphony. Engage with local artisans and discover the centuries-old craftsmanship that defines Moroccan culture. Afterward, venture into the Sahara Desert on camelback, where endless sand dunes stretch into the horizon. Experience the magic of desert sunsets, camp under the stars, and listen to stories shared around the campfire. The Moroccan Souk and Desert Adventure is an exploration of culture, history, and the enchanting landscapes of Morocco.",
+  image_url: "https://media.nomadicmatt.com/2021/morocco-desert-tour.jpg",
+  user_id: user1.id
+)
+
+experience8 = TravelExperience.create(
+  title: "Seychelles Island Paradise",
+  description: "Escape to the idyllic beaches and crystal-clear waters of the Seychelles. Discover a tropical paradise where white sandy beaches meet turquoise oceans, creating a backdrop of sheer tranquility. Snorkel among vibrant coral reefs, swim with exotic marine life, and bask in the sun's warm embrace. Explore lush jungles and spot rare bird species in the Seychelles' diverse ecosystems. Whether you're seeking adventure or relaxation, the Seychelles Island Paradise offers a secluded haven for couples, families, and solo travelers alike.",
+  image_url: "https://media.nomadicmatt.com/2020/seychellesguide2.jpg",
+  user_id: user2.id
+)
+
   
   
   puts "✅ Done seeding!"

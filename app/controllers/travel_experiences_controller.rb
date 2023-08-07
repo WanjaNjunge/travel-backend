@@ -1,5 +1,5 @@
 class TravelExperiencesController < ApplicationController
-  before_action :authorized
+  before_action :authorized, except: [:index, :show]
   before_action :set_travel_experience, only: %i[show update destroy]
   before_action :authorized_user, only: %i[update destroy]
 
