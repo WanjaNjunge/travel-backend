@@ -103,30 +103,31 @@ diani = Destination.create!(destination_list[21].merge(user_id: admin.id))
 pretoria = Destination.create!(destination_list[22].merge(user_id: admin.id))
 mount_kenya = Destination.create!(destination_list[23].merge(user_id: admin.id))
 nakuru = Destination.create!(destination_list[24].merge(user_id: admin.id))
-  
-  # Create Travel Packages
-    TravelPackage.create!(
-    name: 'Romantic Paris Getaway',
-    description: 'Experience the romance of Paris with your loved one.',
-    image_url: 'https://travel.usnews.com/dims4/USNEWS/00e9466/2147483647/resize/445x280%5E%3E/crop/445x280/quality/85/?url=https%3A%2F%2Ftravel.usnews.com%2Fimages%2Fgettyimages-520025941_5j9mOtt.jpg',
-    pricing: 1500.0,
-    itinerary: 'Day 1: Arrival in Paris...',
-    booking_status: 'available',
-    user_id: admin.id,
-    destination_id: paris.id
-  )
-  
-    TravelPackage.create!(
-    name: 'Exotic Bali Adventure',
-    description: 'Explore the exotic beauty of Bali through adventure activities.',
-    image_url: 'https://travel.usnews.com/dims4/USNEWS/00e9466/2147483647/resize/445x280%5E%3E/crop/445x280/quality/85/?url=https%3A%2F%2Ftravel.usnews.com%2Fimages%2Fgettyimages-520025941_5j9mOtt.jpg',
-    pricing: 1200.0,
-    itinerary: 'Day 1: Arrival in Bali...',
-    booking_status: 'available',
-    user_id: admin.id,
-    destination_id: bali.id
-  )
-  puts "Packages.create seeding!"
+ # Create Travel Packages
+TravelPackage.create!(
+  name: 'Romantic Paris Getaway',
+  description: 'Experience the enchanting romance of Paris with your loved one on this unforgettable getaway. Stroll along the Seine River, visit the iconic Eiffel Tower, and indulge in exquisite French cuisine. Fall in love all over again in the city of love.',
+  image_url: 'https://travel.usnews.com/dims4/USNEWS/00e9466/2147483647/resize/445x280%5E%3E/crop/445x280/quality/85/?url=https%3A%2F%2Ftravel.usnews.com%2Fimages%2Fgettyimages-520025941_5j9mOtt.jpg',
+  pricing: 1500.0,
+  itinerary: "Day 1: Arrival in Paris\nDay 2: Seine River cruise\nDay 3: Visit to the Louvre Museum\nDay 4: Eiffel Tower experience\nDay 5: Montmartre exploration\nDay 6: Day trip to Palace of Versailles\nDay 7: Departure from Paris",
+  booking_status: 'available',
+  user_id: admin.id,
+  destination_id: paris.id
+)
+
+TravelPackage.create!(
+  name: 'Exotic Bali Adventure',
+  description: 'Embark on an exhilarating adventure through the stunning landscapes of Bali. Explore lush rice terraces, lounge on pristine beaches, and discover the vibrant local culture. From thrilling water sports to serene temples, Bali offers an unforgettable journey.',
+  image_url: 'https://travel.usnews.com/dims4/USNEWS/00e9466/2147483647/resize/445x280%5E%3E/crop/445x280/quality/85/?url=https%3A%2F%2Ftravel.usnews.com%2Fimages%2Fgettyimages-520025941_5j9mOtt.jpg',
+  pricing: 1200.0,
+  itinerary: "Day 1: Arrival in Bali\nDay 2: Exploring Ubud and its markets\nDay 3: Visit to Tegallalang Rice Terraces\nDay 4: Beach day at Uluwatu\nDay 5: Water sports and Tanah Lot Temple\nDay 6: Discovering local crafts\nDay 7: Departure from Bali",
+  booking_status: 'available',
+  user_id: admin.id,
+  destination_id: bali.id
+)
+
+puts "Packages.create seeding!"
+
   
   # Create more travel packages for each destination (you can add 3 more per destination)
   travel_package_list = [
