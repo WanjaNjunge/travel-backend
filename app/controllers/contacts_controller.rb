@@ -1,13 +1,23 @@
 # app/controllers/contacts_controller.rb
 
 class ContactsController < ApplicationController
+    def index
+      @contact = Contact.new
+    end
+
+    def all
+        @contacts = Contact.all
+      end
+  
     def create
       @contact = Contact.new(contact_params)
   
       if @contact.save
-        render json: { message: 'Contact form submitted successfully' }, status: :ok
+        flash[:success] = 'Contact form submitted successfully'
+        redirect_to contacts_path
       else
-        render json: { errors: @contact.errors.full_messages }, status: :unprocessable_entity
+        flash.now[:error] = @contact.errors.full_messages.join(', ')
+        render :index
       end
     end
   
