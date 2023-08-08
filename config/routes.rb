@@ -4,8 +4,11 @@ Rails.application.routes.draw do
   resources :travel_packages
   resources :travel_experiences
   resources :destinations
-  resources :contacts, only: [:create]
   resources :users, only: [:create, :update]
+
+  resources :contacts, only: [:index, :create] # Only includes index and create routes
+  get '/contacts/all', to: 'contacts#all'
+
   post "/login", to: "users#login"
   get "/auto_login", to: "users#auto_login"
   
