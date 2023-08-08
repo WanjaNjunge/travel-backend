@@ -1,3 +1,10 @@
+# Clear all existing data
+puts "Clearing existing data..."
+User.destroy_all
+Destination.destroy_all
+TravelPackage.destroy_all
+TravelExperience.destroy_all
+
 # Create Users
 user1 = User.create!(
     username: 'johny_doe',
