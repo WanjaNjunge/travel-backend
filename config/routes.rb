@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :travel_packages
   resources :travel_experiences
   resources :destinations
-  
+  resources :contacts, only: [:create]
   resources :users, only: [:create, :update]
   post "/login", to: "users#login"
   get "/auto_login", to: "users#auto_login"
