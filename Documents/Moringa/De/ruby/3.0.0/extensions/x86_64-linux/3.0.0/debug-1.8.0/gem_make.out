@@ -1,0 +1,16 @@
+current directory: /home/najma/Documents/Moringa/Development/Code/Phase5/travel-backend/Documents/Moringa/De/ruby/3.0.0/gems/debug-1.8.0/ext/debug
+/home/najma/.rbenv/versions/3.0.5/bin/ruby -I /home/najma/.rbenv/versions/3.0.5/lib/ruby/3.0.0 -r ./siteconf20230807-10499-65u23n.rb extconf.rb
+creating Makefile
+
+current directory: /home/najma/Documents/Moringa/Development/Code/Phase5/travel-backend/Documents/Moringa/De/ruby/3.0.0/gems/debug-1.8.0/ext/debug
+make DESTDIR\= clean
+
+current directory: /home/najma/Documents/Moringa/Development/Code/Phase5/travel-backend/Documents/Moringa/De/ruby/3.0.0/gems/debug-1.8.0/ext/debug
+make DESTDIR\=
+compiling debug.c
+compiling iseq_collector.c
+linking shared-object debug/debug.so
+
+current directory: /home/najma/Documents/Moringa/Development/Code/Phase5/travel-backend/Documents/Moringa/De/ruby/3.0.0/gems/debug-1.8.0/ext/debug
+make DESTDIR\= install
+/bin/install -c -m 0755 debug.so ./.gem.20230807-10499-esffwo/debug

@@ -1,0 +1,15 @@
+current directory: /home/najma/Documents/Moringa/Development/Code/Phase5/travel-backend/Documents/Moringa/De/ruby/3.0.0/gems/websocket-driver-0.7.6/ext/websocket-driver
+/home/najma/.rbenv/versions/3.0.5/bin/ruby -I /home/najma/.rbenv/versions/3.0.5/lib/ruby/3.0.0 -r ./siteconf20230807-10499-lnky7b.rb extconf.rb
+creating Makefile
+
+current directory: /home/najma/Documents/Moringa/Development/Code/Phase5/travel-backend/Documents/Moringa/De/ruby/3.0.0/gems/websocket-driver-0.7.6/ext/websocket-driver
+make DESTDIR\= clean
+
+current directory: /home/najma/Documents/Moringa/Development/Code/Phase5/travel-backend/Documents/Moringa/De/ruby/3.0.0/gems/websocket-driver-0.7.6/ext/websocket-driver
+make DESTDIR\=
+compiling websocket_mask.c
+linking shared-object websocket_mask.so
+
+current directory: /home/najma/Documents/Moringa/Development/Code/Phase5/travel-backend/Documents/Moringa/De/ruby/3.0.0/gems/websocket-driver-0.7.6/ext/websocket-driver
+make DESTDIR\= install
+/bin/install -c -m 0755 websocket_mask.so ./.gem.20230807-10499-dh96se

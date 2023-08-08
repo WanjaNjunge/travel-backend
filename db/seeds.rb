@@ -33,7 +33,7 @@ user2 = User.create!(
 paris = Destination.create!(
     location: 'Paris',
     country: 'France',
-    image_url: 'https://travel.usnews.com/dims4/USNEWS/00e9466/2147483647/resize/445x280%5E%3E/crop/445x280/quality/85/?url=https%3A%2F%2Ftravel.usnews.com%2Fimages%2Fgettyimages-520025941_5j9mOtt.jpg',
+    image_url: 'https://www.nomadicmatt.com/wp-content/uploads/2018/08/5daysinparis1.jpg',
     user_id: admin.id
   )
  
