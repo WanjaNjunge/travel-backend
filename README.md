@@ -27,7 +27,7 @@ These instructions will help you set up and run the Travel Trove backend on your
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/travel-trove-backend.git
+   git clone https://github.com/WanjaNjunge/travel-trove-backend.git
    cd travel-trove-backend
 
 1. Installing dependencies
@@ -97,6 +97,23 @@ Our heartfelt gratitude goes out to the members of Group 1 who have contributed 
 - **Stephanie Wanja**
 
 Their dedicated involvement has been pivotal in bringing the Travel Trove Backend to life.
+
+We welcome contributions from the community! If you'd like to contribute to Travel Trove, please follow these steps:
+
+1. Fork the repository and create a new branch:
+
+    ```bash
+    git checkout -b feature/your-feature-name
+
+2. Make your changes, add tests if applicable, and commit:
+    ```bash
+    git commit -m "Add your commit message here"
+3. Push your branch to your forked repository:
+    ```bash
+    git push origin feature/your-feature-name
+4. Create a pull request from your branch to the main repository.
+
+For major changes or feature additions, it's recommended to open an issue first to discuss the changes you'd like to make.
 
 ## License
 
