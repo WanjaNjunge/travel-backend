@@ -10,9 +10,9 @@ user1 = User.create!(
     username: 'johny_doe',
     email: 'hiiii@example.com',
     password: 'passwordy',
-    
+   
   )
-  
+ 
 user2 = User.create!(
     username: 'janey_smith',
     email: 'usery@example.com',
@@ -25,7 +25,7 @@ user2 = User.create!(
         password: "Admin2254",
         role: "admin"
     )
-    
+   
 
   puts "Users seeding!"
 
@@ -36,7 +36,7 @@ paris = Destination.create!(
     image_url: 'https://travel.usnews.com/dims4/USNEWS/00e9466/2147483647/resize/445x280%5E%3E/crop/445x280/quality/85/?url=https%3A%2F%2Ftravel.usnews.com%2Fimages%2Fgettyimages-520025941_5j9mOtt.jpg',
     user_id: admin.id
   )
-  
+ 
   bali = Destination.create!(
     location: 'Bali',
     country: 'Indonesia',
@@ -44,7 +44,7 @@ paris = Destination.create!(
     user_id: admin.id
   )
   puts "Destination.create seeding!"
-  
+ 
   # Create more destinations (you can add 18 more)
   destination_list = [
     { location: 'New York City', country: 'USA', image_url: 'https://upload.wikimedia.org/wikipedia/commons/d/d2/New_York_Skyline_-2_%288111177937%29.jpg', user_id: admin.id},
@@ -72,11 +72,11 @@ paris = Destination.create!(
     { location: 'Pretoria', country: 'South Africa', image_url: 'https://tour.epesicloud.com/app/storage/uploads/37/1671095042_80_table-mountain-cable-car.jpg', user_id: admin.id},
     { location: 'Mount Kenya', country: 'Kenya', image_url: 'https://tour.epesicloud.com/app/storage/uploads/37/1686061247_19_2_Giraffes_At_Mount_Kenya_With_Bonfire_Adventures.jpg', user_id: admin.id},
     { location: 'Nakuru', country: 'Kenya', image_url: 'https://destinationskenya.com/wp-content/uploads/2021/07/Nakuru-kenya.jpg', user_id: admin.id},
-    
+   
     # Add more destinations here
   ]
   puts "Destinations seeding!"
-  
+ 
   # Create other destinations and assign them to variables
 new_york = Destination.create!(destination_list[0].merge(user_id: admin.id))
 tokyo = Destination.create!(destination_list[1].merge(user_id: admin.id))
@@ -103,7 +103,7 @@ diani = Destination.create!(destination_list[21].merge(user_id: admin.id))
 pretoria = Destination.create!(destination_list[22].merge(user_id: admin.id))
 mount_kenya = Destination.create!(destination_list[23].merge(user_id: admin.id))
 nakuru = Destination.create!(destination_list[24].merge(user_id: admin.id))
-  
+ 
   # Create Travel Packages
     TravelPackage.create!(
     name: 'Romantic Paris Getaway',
@@ -115,7 +115,7 @@ nakuru = Destination.create!(destination_list[24].merge(user_id: admin.id))
     user_id: admin.id,
     destination_id: paris.id
   )
-  
+ 
     TravelPackage.create!(
     name: 'Exotic Bali Adventure',
     description: 'Explore the exotic beauty of Bali through adventure activities.',
@@ -127,10 +127,10 @@ nakuru = Destination.create!(destination_list[24].merge(user_id: admin.id))
     destination_id: bali.id
   )
   puts "Packages.create seeding!"
-  
+ 
   # Create more travel packages for each destination (you can add 3 more per destination)
   travel_package_list = [
-    
+   
     { name: 'Luxury Experience in New York', description: 'Indulge in luxury in the heart of New York City.', image_url: 'https://media.nomadicmatt.com/queenstownguide.jpg', pricing: 2000.0, itinerary: 'Day 1: Arrive in NYC...', booking_status: 'available', user_id: admin.id, destination_id: new_york.id },
     { name: 'Tokyo Cultural Tour', description: 'Immerse yourself in Tokyo\'s rich cultural heritage.', image_url: 'https://media.nomadicmatt.com/queenstownguide.jpg', pricing: 1300.0, itinerary: 'Day 1: Cultural highlights of Tokyo...', booking_status: 'available', user_id: admin.id, destination_id: new_york.id },
     # Tokyo
@@ -278,6 +278,40 @@ experience8 = TravelExperience.create(
   user_id: user2.id
 )
 
-  
-  
+
+# Input and Save Contact Records
+puts "Contact Us seeding!"
+contact1 = Contact.new(name: "John Doe", email: "john@example.com", message: "Hello, this is John.")
+contact1.save
+
+contact2 = Contact.new(name: "Jane Smith", email: "jane@example.com", message: "Hi, this is Jane.")
+contact2.save
+
+contact3 = Contact.new(name: "Michael Johnson", email: "michael@example.com", message: "Hey there, this is Michael.")
+contact3.save
+
+contact4 = Contact.new(name: "Emily Brown", email: "emily@example.com", message: "Hi, it's Emily.")
+contact4.save
+
+contact5 = Contact.new(name: "William Wilson", email: "william@example.com", message: "Hello, this is William.")
+contact5.save
+
+contact6 = Contact.new(name: "Olivia Davis", email: "olivia@example.com", message: "Hey, it's Olivia.")
+contact6.save
+
+contact7 = Contact.new(name: "James Lee", email: "james@example.com", message: "Hello, this is James.")
+contact7.save
+
+contact8 = Contact.new(name: "Sophia Martinez", email: "sophia@example.com", message: "Hi there, it's Sophia.")
+contact8.save
+
+contact9 = Contact.new(name: "Liam Taylor", email: "liam@example.com", message: "Hello, this is Liam.")
+contact9.save
+
+contact10 = Contact.new(name: "Ava Anderson", email: "ava@example.com", message: "Hi, it's Ava.")
+contact10.save
+
+
+ 
+ 
   puts "✅ Done seeding!"
