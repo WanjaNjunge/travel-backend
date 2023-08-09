@@ -319,6 +319,6 @@ contact10 = Contact.new(name: "Ava Anderson", email: "ava@example.com", message:
 contact10.save
 
 
- 
- 
+
+
   puts "✅ Done seeding!"
