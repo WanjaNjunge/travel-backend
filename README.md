@@ -27,7 +27,7 @@ These instructions will help you set up and run the Travel Trove backend on your
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/WanjaNjunge/travel-trove-backend.git
+   git clone git@github.com:WanjaNjunge/travel-backend.git
    cd travel-trove-backend
 
 1. Installing dependencies
