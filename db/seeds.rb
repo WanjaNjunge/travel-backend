@@ -52,7 +52,7 @@ paris = Destination.create!(
     { location: 'Sydney', country: 'Australia', image_url: 'https://i.insider.com/5f3424f2988ee31668198a09?width=700', user_id: admin.id},
     { location: 'Rio de Janeiro', country: 'Brazil', image_url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Cidade_Maravilhosa.jpg/1200px-Cidade_Maravilhosa.jpg', user_id: admin.id},
     { location: 'Cape Town', country: 'South Africa', image_url: 'https://www.thoughtco.com/thmb/EepIF7qjAhqbRF7IDVscMSjUQ-Y=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-1057137024-d3c6daf73fcb48d38ce252f5c6314e96.jpg', user_id: admin.id},
-    { location: 'Bangkok', country: 'Thailand', image_url: 'https://a.cdn-hotels.com/gdcs/production59/d1143/fc0453c0-e10c-4c4b-b31e-2a95179ddca3.jpg', user_id: admin.id},
+    { location: 'Bangkok', country: 'Thailand', image_url: 'https://t4.ftcdn.net/jpg/01/80/70/25/360_F_180702570_S35e8P4Ha2mqzmqf5bAKsyJMrRYiTtXl.jpg', user_id: admin.id},
     { location: 'Barcelona', country: 'Spain', image_url: 'https://cdn.internationalliving.com/wp-content/uploads/2019/10/park-guell.jpg', user_id: admin.id},
     { location: 'Dubai', country: 'UAE', image_url: 'https://images.unsplash.com/flagged/photo-1559717865-a99cac1c95d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8ZHViYWl8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60', user_id: admin.id},
     { location: 'Marrakech', country: 'Morocco', image_url: 'https://media.nomadicmatt.com/marguide.jpg', user_id: admin.id},
@@ -71,7 +71,7 @@ paris = Destination.create!(
     { location: 'Diani', country: 'Kenya', image_url: 'https://tour.epesicloud.com/app/storage/uploads/37/1683886539_94_Mombasa_North_Coast_Pride_Inn_Paradise.png', user_id: admin.id},
     { location: 'Pretoria', country: 'South Africa', image_url: 'https://tour.epesicloud.com/app/storage/uploads/37/1671095042_80_table-mountain-cable-car.jpg', user_id: admin.id},
     { location: 'Mount Kenya', country: 'Kenya', image_url: 'https://tour.epesicloud.com/app/storage/uploads/37/1686061247_19_2_Giraffes_At_Mount_Kenya_With_Bonfire_Adventures.jpg', user_id: admin.id},
-    { location: 'Nakuru', country: 'Kenya', image_url: 'https://destinationskenya.com/wp-content/uploads/2021/07/Nakuru-kenya.jpg', user_id: admin.id},
+    { location: 'Nakuru', country: 'Kenya', image_url: 'https://www.lakenakurukenya.com/wp-content/uploads/2020/09/The-Wonders-of-Lake-Nakuru-National-Park--750x389.jpg', user_id: admin.id},
    
     # Add more destinations here
   ]
